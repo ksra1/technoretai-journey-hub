@@ -130,25 +130,26 @@ export const ProductsOverview = () => {
                     </h4>
 
                     {/* Purpose */}
-                    <div className="mb-4" style={{ minHeight: '140px' }}>
+                    <div className="mb-4" style={{ minHeight: '120px' }}>
                       <p className="font-semibold text-slate-700 mb-1.5 text-sm">Purpose:</p>
                       <p className="text-slate-600 leading-relaxed text-sm">{product.purpose}</p>
                     </div>
 
                     {/* Connects To */}
-                    <div className="mb-4" style={{ minHeight: '110px' }}>
+                    <div className="mb-4" style={{ minHeight: '100px' }}>
                       <p className="font-semibold text-slate-700 mb-1.5 text-sm">Connects To:</p>
                       <p className="text-slate-600 leading-relaxed text-sm">{product.connects}</p>
                     </div>
 
                     {/* How */}
-                    <div className="mb-4" style={{ minHeight: '160px' }}>
-                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">How & Why:</p>
+                    <div className="mb-4" style={{ minHeight: '120px' }}>
+                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">How:</p>
                       <p className="text-slate-600 leading-relaxed text-sm">{product.how}</p>
                     </div>
 
                     {/* Why */}
-                    <div style={{ flex: 1 }}>
+                    <div style={{ minHeight: '100px' }}>
+                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">Why:</p>
                       <p className="text-slate-600 leading-relaxed text-sm">{product.why}</p>
                     </div>
                   </div>
