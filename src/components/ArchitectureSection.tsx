@@ -11,12 +11,14 @@ export const ArchitectureSection = () => {
             High-level architecture showing data flow and system integration
           </p>
 
-          <div className="w-full">
-            <img
-              src={architectureDiagram}
-              alt="Adobe Experience Platform Architecture Diagram"
-              className="w-full h-auto shadow-lg rounded-lg"
-            />
+          <div className="w-full flex justify-center">
+            <div style={{ width: '90%' }}>
+              <img
+                src={architectureDiagram}
+                alt="Adobe Experience Platform Architecture Diagram"
+                className="w-full h-auto shadow-lg rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </div>

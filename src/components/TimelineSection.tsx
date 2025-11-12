@@ -254,7 +254,11 @@ export const TimelineSection = () => {
     <section id="timeline" className="min-h-screen py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Implementation Timeline</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">Implementation Timeline</h2>
+          <p className="text-center text-slate-600 dark:text-slate-400 mb-12 text-lg">
+            <span className="font-semibold">Core Implementation:</span> 6 months (Jan 13 - Jul 14, 2026) | 
+            <span className="font-semibold ml-2">Scale & Optimize:</span> 3 months (Jul 27 - Sep 24, 2026)
+          </p>
 
           {/* Gantt Chart Section */}
           <div className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
@@ -357,6 +361,13 @@ export const TimelineSection = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`h-4 w-4 rounded-full ${phase.color}`} />
                   <h3 className="text-2xl font-bold">{phase.name}</h3>
+                  <span className={`ml-auto px-3 py-1 rounded-full text-xs font-semibold ${
+                    phaseIndex < 3 
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100' 
+                      : 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100'
+                  }`}>
+                    {phaseIndex < 3 ? 'Core Implementation' : 'Scale & Optimize'}
+                  </span>
                 </div>
                 
                 <div className="space-y-2">
