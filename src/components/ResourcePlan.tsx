@@ -7,7 +7,7 @@ export const ResourcePlan = () => {
       count: 1,
       responsibilities: "Overall architecture design, integration strategy, technical leadership",
       reportingTo: "Program Manager",
-      commitment: "Full-time (9 months)",
+      commitment: "Full-time (All Phases)",
     },
     {
       role: "Technical Consultants",
@@ -139,14 +139,10 @@ export const ResourcePlan = () => {
 
               <Card className="mt-6 p-6 bg-primary/10 border-2 border-primary">
                 <h4 className="font-bold text-xl mb-4 text-primary">Total Team Size</h4>
-                <div className="grid grid-cols-2 gap-6 text-center">
+                <div className="grid grid-cols-1 gap-6 text-center">
                   <div>
                     <div className="text-4xl font-bold text-primary">13</div>
                     <div className="text-sm text-foreground font-medium">Total Resources</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-primary">9</div>
-                    <div className="text-sm text-foreground font-medium">Months Duration</div>
                   </div>
                 </div>
               </Card>
