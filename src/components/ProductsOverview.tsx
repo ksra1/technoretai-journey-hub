@@ -6,6 +6,8 @@ export const ProductsOverview = () => {
       category: "Content",
       color: "bg-gradient-to-r from-red-600 to-red-700",
       textColor: "#DC2626",
+      gradientFrom: "#DC2626",
+      gradientTo: "#B91C1C",
       products: [
         {
           name: "AEM",
@@ -20,6 +22,8 @@ export const ProductsOverview = () => {
       category: "Data Insights & Audiences",
       color: "bg-gradient-to-r from-red-500 to-red-600",
       textColor: "#EF4444",
+      gradientFrom: "#EF4444",
+      gradientTo: "#DC2626",
       products: [
         {
           name: "Adobe Analytics",
@@ -48,6 +52,8 @@ export const ProductsOverview = () => {
       category: "Customer Journeys",
       color: "bg-gradient-to-r from-red-700 to-red-800",
       textColor: "#B91C1C",
+      gradientFrom: "#B91C1C",
+      gradientTo: "#7F1D1D",
       products: [
         {
           name: "Target",
@@ -83,80 +89,80 @@ export const ProductsOverview = () => {
         </p>
       </div>
 
-      {/* All categories and products side-by-side */}
-      <div style={{ 
-        display: 'flex',
-        gap: '3rem',
-        padding: '0 0.5rem',
-        justifyContent: 'center',
-        width: '100%'
-      }}>
-        {productCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} style={{ 
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.5rem'
-          }}>
-            {/* Category Header */}
-            <div className={`${category.color} text-white py-3 px-6 rounded-lg mb-6 shadow-md`}>
-              <h3 className="text-lg font-bold">{category.category}</h3>
-            </div>
-            
-            {/* Products for this category - side by side */}
-            <div style={{ 
+      {/* All categories and products */}
+      <div className="px-4 overflow-x-auto">
+        <div style={{ 
+          display: 'flex',
+          gap: '1.5rem',
+          justifyContent: 'center',
+          flexWrap: 'nowrap',
+          minWidth: 'min-content'
+        }}>
+          {productCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} style={{ 
               display: 'flex',
-              flexDirection: 'row',
-              gap: '1.5rem',
-              flexWrap: 'nowrap'
+              flexDirection: 'column',
+              gap: '1rem',
+              flex: '0 0 auto'
             }}>
+              {/* Category Header */}
+              <div className={`${category.color} py-3 px-6 rounded-lg shadow-md text-center`}>
+                <h3 className="text-base font-bold text-white">{category.category}</h3>
+              </div>
+              
+              {/* Products for this category */}
+              <div style={{ 
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '1rem'
+              }}>
                 {category.products.map((product, productIndex) => (
                   <div
                     key={productIndex}
-                    className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-l-4"
+                    className="rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-l-4"
                     style={{ 
                       borderLeftColor: category.textColor, 
-                      boxSizing: 'border-box',
+                      width: '250px',
                       display: 'flex',
                       flexDirection: 'column',
-                      padding: '1.5rem',
-                      width: '250px',
-                      height: '700px',
-                      flexShrink: 0
+                      padding: '1rem',
+                      background: `linear-gradient(135deg, ${category.gradientFrom}08 0%, ${category.gradientTo}04 100%)`
                     }}
                   >
                     {/* Product name */}
-                    <h4 className="font-bold text-lg mb-4" style={{ color: category.textColor, height: '32px' }}>
+                    <h4 className="font-bold text-lg mb-3" style={{ color: category.textColor, height: '28px' }}>
                       {product.name}
                     </h4>
 
-                    {/* Purpose */}
-                    <div className="mb-4" style={{ height: '100px', display: 'flex', flexDirection: 'column' }}>
-                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">Purpose:</p>
-                      <p className="text-slate-600 leading-relaxed text-sm flex-1">{product.purpose}</p>
+                    {/* Purpose - Fixed height */}
+                    <div style={{ height: '150px', marginBottom: '1.125rem', display: 'flex', flexDirection: 'column' }}>
+                      <p className="font-semibold text-slate-700 mb-1 text-sm">Purpose:</p>
+                      <p className="text-slate-600 text-sm leading-snug flex-1">{product.purpose}</p>
                     </div>
 
-                    {/* Connects To */}
-                    <div className="mb-4" style={{ height: '150px', display: 'flex', flexDirection: 'column' }}>
-                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">Connects To:</p>
-                      <p className="text-slate-600 leading-relaxed text-sm flex-1">{product.connects}</p>
+                    {/* Connects To - Fixed height */}
+                    <div style={{ height: '140px', marginBottom: '0.125rem', display: 'flex', flexDirection: 'column' }}>
+                      <p className="font-semibold text-slate-700 mb-1 text-sm">Connects To:</p>
+                      <p className="text-slate-600 text-sm leading-snug flex-1">{product.connects}</p>
                     </div>
 
-                    {/* How */}
-                    <div className="mb-4" style={{ height: '130px', display: 'flex', flexDirection: 'column' }}>
-                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">How:</p>
-                      <p className="text-slate-600 leading-relaxed text-sm flex-1">{product.how}</p>
+                    {/* How - Fixed height */}
+                    <div style={{ height: '160px', marginBottom: '0.75rem', display: 'flex', flexDirection: 'column' }}>
+                      <p className="font-semibold text-slate-700 mb-1 text-sm">How:</p>
+                      <p className="text-slate-600 text-sm leading-snug flex-1">{product.how}</p>
                     </div>
 
-                    {/* Why */}
-                    <div style={{ height: '150px', display: 'flex', flexDirection: 'column' }}>
-                      <p className="font-semibold text-slate-700 mb-1.5 text-sm">Why:</p>
-                      <p className="text-slate-600 leading-relaxed text-sm flex-1">{product.why}</p>
+                    {/* Why - Fixed height */}
+                    <div style={{ height: '160px', display: 'flex', flexDirection: 'column' }}>
+                      <p className="font-semibold text-slate-700 mb-1 text-sm">Why:</p>
+                      <p className="text-slate-600 text-sm leading-snug flex-1">{product.why}</p>
                     </div>
                   </div>
                 ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
