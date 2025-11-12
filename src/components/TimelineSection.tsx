@@ -82,7 +82,7 @@ export const TimelineSection = () => {
           start: "Jan 26, 2026", 
           end: "Feb 8, 2026", 
           days: 10,
-          description: "Establish governance frameworks and communication plans to manage transformation."
+          description: "Establish governance frameworks, communication plans, and change management processes. Define data stewardship roles, security policies, compliance requirements, and organizational structures to support the transformation. Create stakeholder communication cadences and success metrics tracking mechanisms."
         },
       ],
     },
@@ -97,14 +97,14 @@ export const TimelineSection = () => {
           start: "Jan 26, 2026", 
           end: "Feb 8, 2026", 
           days: 10,
-          description: "Develop solution blueprints and review integration needs for Adobe Experience Cloud products."
+          description: "Design comprehensive solution blueprints for Adobe Experience Cloud implementation. Map integration points with existing systems (ERP, CRM, marketing automation). Define data schemas, event taxonomy for Web/Mobile SDKs, CDP audience definitions, personalization rules, and omnichannel journey orchestration workflows."
         },
         { 
           name: "Architecture Review", 
           start: "Feb 9, 2026", 
           end: "Feb 18, 2026", 
           days: 8,
-          description: "Validate architecture design including data ingestion pipelines and SDK usage."
+          description: "Conduct comprehensive architecture review including data ingestion pipelines, security controls, API design patterns, SDK implementation guidelines, and scalability requirements. Validate compliance with organizational standards and identify risk mitigation strategies. Obtain sign-off from IT, security, and compliance teams."
         },
       ],
     },
@@ -119,77 +119,77 @@ export const TimelineSection = () => {
           start: "Feb 19, 2026", 
           end: "Mar 4, 2026", 
           days: 10,
-          description: "Deploy Adobe Experience Platform Web SDK on website for real-time event capture."
+          description: "Deploy Adobe Experience Platform Web SDK across website properties. Implement XDM event schema for behavioral tracking (page views, clicks, form interactions, conversions). Configure data collection rules, establish real-time event streaming to CDP. Test data quality and implement validation rules for critical events."
         },
         { 
           name: "SDK Instrumentation & Deployment: Mobile SDK", 
           start: "Mar 5, 2026", 
           end: "Mar 19, 2026", 
           days: 11,
-          description: "Deploy Adobe Experience Platform Mobile SDK on mobile app for real-time event capture."
+          description: "Deploy Adobe Experience Platform Mobile SDK on iOS and Android applications. Implement XDM event schema for mobile-specific interactions (app launches, screen views, purchases, push notifications). Configure offline data collection and queuing. Validate cross-device tracking capability for unified customer profiles."
         },
         { 
           name: "Early Analytics Dashboards (Quick Win)", 
           start: "Feb 19, 2026", 
           end: "Mar 19, 2026", 
           days: 21,
-          description: "Deliver initial web/mobile analytics dashboards using Adobe Analytics and push events into CDP."
+          description: "Build initial Adobe Analytics and Customer Journey Analytics dashboards to showcase value. Create real-time dashboards for web/mobile traffic, conversion funnel analysis, and customer behavior patterns. Feed event data into CDP for audience creation. Enable stakeholders to see immediate ROI."
         },
         { 
           name: "Content Move to Adobe Experience Manager", 
           start: "Mar 20, 2026", 
           end: "Jun 3, 2026", 
           days: 40,
-          description: "Migrate assets to AEM; develop reusable templates; manage content delivery."
+          description: "Migrate digital assets and content to Adobe Experience Manager. Build reusable component templates and content fragments for consistency across channels. Implement content delivery network (CDN) optimization, multi-language support, and version control. Enable marketers to manage content independently."
         },
         { 
           name: "Real-Time CDP Integration: Data Ingestion Setup", 
           start: "Mar 20, 2026", 
           end: "May 1, 2026", 
           days: 30,
-          description: "Integrate real-time and batch data sources into the CDP."
+          description: "Configure Adobe Real-time Customer Data Platform to ingest real-time event streams from Web/Mobile SDKs and batch data from enterprise sources (DMS, transactional systems, offline purchases). Set up data connectors, transformation rules, and quality validation. Enable identity resolution across channels."
         },
         { 
           name: "Real-Time CDP Integration: Profile Unification", 
           start: "May 2, 2026", 
           end: "Jun 10, 2026", 
           days: 28,
-          description: "Build unified customer profiles and segmentation for personalization."
+          description: "Build unified customer profiles in CDP by stitching together data from multiple sources and touchpoints. Create segment definitions for persona-based targeting (VIP customers, price-sensitive, high-intent). Set up audience activation rules and segment refresh frequencies for downstream activation."
         },
         { 
           name: "Deploy Adobe Journey Optimizer", 
           start: "Jun 11, 2026", 
           end: "Jun 30, 2026", 
           days: 14,
-          description: "Install and configure AJO for omnichannel journey orchestration and real-time personalization."
+          description: "Configure Adobe Journey Optimizer for omnichannel campaign orchestration. Design customer journey workflows triggered by behavioral events (browsing, cart abandonment, purchase). Set up multi-channel messaging (email, SMS, push notifications, in-app). Implement frequency capping, A/B testing, and dynamic content personalization."
         },
         { 
           name: "Adobe Target Implementation", 
           start: "Jun 11, 2026", 
           end: "Jun 24, 2026", 
           days: 10,
-          description: "Integrate Adobe Target for website personalization using real-time segments from CDP and content from AEM."
+          description: "Integrate Adobe Target for website and mobile personalization. Create audiences based on CDP segments and real-time behavioral data. Build A/B and multivariate tests for product recommendations, content variations, and offer optimization. Set up targeting rules for different customer segments."
         },
         { 
           name: "Adobe Analytics Implementation", 
           start: "Jun 25, 2026", 
           end: "Jun 30, 2026", 
           days: 5,
-          description: "Deploy Adobe Analytics via Adobe Experience Platform Web SDK for behavioral data capture feeding into CDP."
+          description: "Deploy comprehensive Adobe Analytics tracking via Adobe Experience Platform Web SDK. Configure conversion funnels, customer journey attribution models, and custom metrics. Build reporting dashboards for marketing, sales, and finance teams. Enable real-time reporting on campaign performance and ROI."
         },
         { 
           name: "Pilot Campaign Launch", 
           start: "Jul 1, 2026", 
           end: "Jul 14, 2026", 
           days: 10,
-          description: "Run initial campaigns leveraging integrated platforms; collect data for optimization."
+          description: "Execute initial pilot campaigns using integrated platform capabilities. Run personalized email campaigns to CDP segments, test A/B variations with Adobe Target, measure impact with Adobe Analytics. Collect performance data to optimize messaging, timing, and targeting strategies for full-scale rollout."
         },
         { 
           name: "Training & Enablement", 
           start: "Jul 15, 2026", 
           end: "Jul 24, 2026", 
           days: 8,
-          description: "Provide role-based training on Adobe Experience Cloud tools."
+          description: "Provide comprehensive role-based training on Adobe Experience Cloud platform. Conduct workshops for marketers (audience building, campaign management), content teams (AEM authoring), analysts (CJA dashboards), and IT (API management, security). Establish support channels and documentation for ongoing enablement."
         },
       ],
     },
@@ -204,28 +204,28 @@ export const TimelineSection = () => {
           start: "Jul 27, 2026", 
           end: "Aug 11, 2026", 
           days: 10,
-          description: "Deploy advanced segmentation and AI-powered personalization leveraging CDP profiles."
+          description: "Deploy advanced segmentation using CDP profiles and AI-driven insights. Implement predictive scoring models to identify high-value customers, churn risk, and propensity to convert. Create dynamic audience rules that auto-update based on behavioral triggers. Scale personalization across all digital channels."
         },
         { 
           name: "Enhance Data Integrations and API Framework", 
           start: "Aug 12, 2026", 
           end: "Aug 27, 2026", 
           days: 10,
-          description: "Optimize APIs and data flows among Adobe Experience Cloud and enterprise systems."
+          description: "Optimize API design and data flow between Adobe Experience Cloud and enterprise systems. Build automated data syncs with CRM, ERP, and marketing automation platforms. Implement monitoring and alerting for data quality and pipeline health. Enable real-time bidirectional data exchange for seamless operations."
         },
         { 
           name: "Establish Center of Excellence (CoE)", 
           start: "Aug 28, 2026", 
           end: "Sep 10, 2026", 
           days: 10,
-          description: "Form CoE for governance, training, and innovation."
+          description: "Form a cross-functional Center of Excellence team including marketing, technology, analytics, and data specialists. Define CoE governance structure, decision-making processes, and innovation roadmap. Establish best practices library, playbooks for common use cases, and internal certification programs for users."
         },
         { 
           name: "Change Management Execution and Reviews", 
           start: "Sep 11, 2026", 
           end: "Sep 24, 2026", 
           days: 10,
-          description: "Conduct ongoing governance and executive reporting."
+          description: "Execute ongoing change management and governance reviews. Conduct stakeholder feedback sessions and user adoption assessments. Track transformation KPIs against baseline metrics (conversion rate, customer lifetime value, operational efficiency). Present executive dashboards and recommendations for continuous improvement."
         },
       ],
     },
@@ -254,10 +254,7 @@ export const TimelineSection = () => {
     <section id="timeline" className="min-h-screen py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4">Implementation Timeline</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            9-month rollout across 4 major phases
-          </p>
+          <h2 className="text-4xl font-bold text-center mb-12">Implementation Timeline</h2>
 
           {/* Gantt Chart Section */}
           <div className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
@@ -335,13 +332,6 @@ export const TimelineSection = () => {
                     })}
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Legend */}
-            <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-6">
-              <div className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Project Duration:</span> Jan 13 - Sep 24, 2026 ({totalDays} days)
               </div>
             </div>
           </div>

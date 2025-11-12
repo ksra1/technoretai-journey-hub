@@ -27,21 +27,21 @@ export const ResourcePlan = () => {
       role: "Frontend Developers",
       count: 2,
       responsibilities: "AEM template development, Target personalization, SDK integration",
-      reportingTo: "Technical Lead",
+      reportingTo: "Solution Architect",
       commitment: "Full-time (Phases 3-4)",
     },
     {
-      role: "Delivery Lead",
+      role: "Change Management Lead",
       count: 1,
       responsibilities: "Governance setup, training programs, stakeholder communication",
       reportingTo: "Program Manager",
-      commitment: "Full-time (All Phases)",
+      commitment: "Part-time (All Phases)",
     },
     {
       role: "QA/Testing Engineer",
       count: 1,
       responsibilities: "End-to-end testing, user acceptance testing, quality assurance",
-      reportingTo: "Technical Lead",
+      reportingTo: "Solution Architect",
       commitment: "Full-time (Phases 3-4)",
     },
     {
@@ -55,20 +55,44 @@ export const ResourcePlan = () => {
 
   const reportingStructure = [
     {
-      level: "Executive",
-      roles: ["Client Executive Sponsor (CMO/CIO)"],
+      role: "Client Executive Sponsor (CMO/CIO)",
+      level: 0,
+      children: ["Program Manager"]
     },
     {
-      level: "Leadership",
-      roles: ["Program Manager"],
+      role: "Program Manager",
+      level: 1,
+      children: ["Solution Architect", "Change Management Lead"]
     },
     {
-      level: "Technical Leadership",
-      roles: ["Solution Architect", "Delivery Lead"],
+      role: "Solution Architect",
+      level: 2,
+      children: ["Technical Consultants (3)", "Data Engineers (2)", "Frontend Developers (2)", "QA/Testing Engineer"]
     },
     {
-      level: "Implementation Team",
-      roles: ["Technical Consultants (3)", "Data Engineers (2)", "Frontend Developers (2)", "QA/Testing Engineer"],
+      role: "Change Management Lead",
+      level: 2,
+      children: []
+    },
+    {
+      role: "Technical Consultants (3)",
+      level: 3,
+      children: []
+    },
+    {
+      role: "Data Engineers (2)",
+      level: 3,
+      children: []
+    },
+    {
+      role: "Frontend Developers (2)",
+      level: 3,
+      children: []
+    },
+    {
+      role: "QA/Testing Engineer",
+      level: 3,
+      children: []
     },
   ];
 
@@ -107,33 +131,50 @@ export const ResourcePlan = () => {
 
             <div>
               <h3 className="text-2xl font-bold mb-6">Reporting Structure</h3>
-              <Card className="p-6 shadow-lg">
-                <div className="space-y-6">
-                  {reportingStructure.map((level, index) => (
-                    <div key={index} className="relative">
-                      {index > 0 && (
-                        <div className="absolute -top-3 left-1/2 w-0.5 h-3 bg-border -translate-x-1/2" />
-                      )}
-                      <div className="text-center">
-                        <div className="inline-block bg-primary/10 px-4 py-1 rounded-full mb-3">
-                          <span className="text-sm font-semibold text-primary">{level.level}</span>
-                        </div>
-                        <div className="space-y-2">
-                          {level.roles.map((role, roleIndex) => (
-                            <div
-                              key={roleIndex}
-                              className="bg-card border border-border rounded-lg p-3 hover:border-primary transition-colors"
-                            >
-                              <p className="font-medium text-sm">{role}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      {index < reportingStructure.length - 1 && (
-                        <div className="absolute -bottom-3 left-1/2 w-0.5 h-3 bg-border -translate-x-1/2" />
-                      )}
+              <Card className="p-8 shadow-lg">
+                <div className="flex flex-col items-center gap-8">
+                  {/* Level 1: Executive Sponsor */}
+                  <div className="border-2 border-red-500 rounded-lg px-8 py-4 bg-red-50 text-center w-72">
+                    <p className="font-bold text-base">Client Executive Sponsor</p>
+                    <p className="text-xs text-muted-foreground">(CMO/CIO)</p>
+                  </div>
+                  
+                  {/* Connector */}
+                  <div className="w-1 h-8 bg-red-500" />
+
+                  {/* Level 2: Program Manager */}
+                  <div className="border-2 border-red-400 rounded-lg px-8 py-4 bg-red-50/80 text-center w-72">
+                    <p className="font-bold text-base">Program Manager</p>
+                  </div>
+
+                  {/* Connector */}
+                  <div className="w-1 h-8 bg-red-400" />
+
+                  {/* Level 3: Solution Architect & Change Mgmt - with horizontal connector */}
+                  <div className="relative w-full flex justify-center items-start gap-24">
+                    {/* Horizontal line and vertical drops */}
+                    <div className="absolute top-0 left-1/4 right-1/4 h-1 bg-red-300" />
+                    <div className="absolute top-0 left-1/4 w-1 h-8 bg-red-300" />
+                    <div className="absolute top-0 right-1/4 w-1 h-8 bg-red-300" />
+
+                    <div className="border-2 border-red-300 rounded-lg px-6 py-3 bg-red-50/60 text-center w-56">
+                      <p className="font-semibold text-sm">Solution Architect</p>
                     </div>
-                  ))}
+                    <div className="border-2 border-red-300 rounded-lg px-6 py-3 bg-red-50/60 text-center w-56">
+                      <p className="font-semibold text-sm">Change Mgmt Lead</p>
+                    </div>
+                  </div>
+
+                  {/* Connector from Solution Architect */}
+                  <div className="ml-0 w-1 h-8 bg-red-300" />
+
+                  {/* Level 4: Implementation Team */}
+                  <div className="space-y-2 border-l-2 border-red-300 pl-6">
+                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Technical Consultants (3)</div>
+                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Data Engineers (2)</div>
+                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Frontend Developers (2)</div>
+                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">QA/Testing Engineer</div>
+                  </div>
                 </div>
               </Card>
 
