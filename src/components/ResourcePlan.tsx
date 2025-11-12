@@ -31,11 +31,11 @@ export const ResourcePlan = () => {
       commitment: "Full-time (Phases 3-4)",
     },
     {
-      role: "Change Management Lead",
+      role: "Delivery Lead",
       count: 1,
       responsibilities: "Governance setup, training programs, stakeholder communication",
       reportingTo: "Program Manager",
-      commitment: "Part-time (All phases)",
+      commitment: "Full-time (All Phases)",
     },
     {
       role: "QA/Testing Engineer",
@@ -64,7 +64,7 @@ export const ResourcePlan = () => {
     },
     {
       level: "Technical Leadership",
-      roles: ["Solution Architect", "Change Management Lead"],
+      roles: ["Solution Architect", "Delivery Lead"],
     },
     {
       level: "Implementation Team",
