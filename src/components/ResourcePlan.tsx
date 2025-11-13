@@ -351,39 +351,6 @@ export const ResourcePlan = () => {
               </Card>
             </div>
           </div>
-
-          <Card className="p-6 bg-primary/5 border-primary/20">
-            <h3 className="text-xl font-bold mb-4">Key Success Factors</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <div>
-                  <h4 className="font-semibold mb-1">Executive Sponsorship</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Active engagement from C-level sponsor for strategic decisions and resource allocation
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <div>
-                  <h4 className="font-semibold mb-1">Cross-Functional Collaboration</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Marketing, IT, and data teams working together with clear communication channels
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                <div>
-                  <h4 className="font-semibold mb-1">Agile Methodology</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Iterative approach with regular checkpoints and flexibility to adapt based on learnings
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
     </section>
