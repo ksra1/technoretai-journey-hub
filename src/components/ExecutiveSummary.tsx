@@ -117,26 +117,25 @@ export const ExecutiveSummary = () => {
 
           {/* Unified Profile Diagram */}
           <div className="mb-16 p-8">
-            <h3 className="text-2xl font-bold mb-4 text-center">Key Challenge: Unified Customer Profile</h3>
+            <h3 className="text-2xl font-bold mb-12 text-center">Key Challenges</h3>
             
-            <div className="flex flex-col lg:flex-row gap-12 items-center justify-center px-4">
-              {/* Right side - Profile Card (now centered) */}
-              <div className="w-full lg:w-96">
-                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Card 1: Unified Profile */}
+              <div className="w-full">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 h-full">
                   {/* Centered Heading */}
                   <div className="text-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
-                    <span className="text-4xl mb-3 block">👤</span>
-                    <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Unified profile</h4>
+                    <img 
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='redGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ef4444;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23991b1b;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='50' fill='url(%23redGrad)'/%3E%3Ccircle cx='50' cy='32' r='15' fill='%23ffffff'/%3E%3Cpath d='M 30 55 Q 30 70 50 80 Q 70 70 70 55' fill='%23ffffff'/%3E%3C/svg%3E"
+                      alt="Unified Profile"
+                      className="w-16 h-16 rounded-full mx-auto mb-3 shadow-md"
+                    />
+                    <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Unified Profile</h4>
                   </div>
 
                   {/* Profile Section */}
-                  <div className="flex items-center gap-4 mb-8">
-                    <img 
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='redGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ef4444;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23991b1b;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='50' fill='url(%23redGrad)'/%3E%3Ccircle cx='50' cy='32' r='15' fill='%23ffffff'/%3E%3Cpath d='M 30 55 Q 30 70 50 80 Q 70 70 70 55' fill='%23ffffff'/%3E%3C/svg%3E"
-                      alt="John"
-                      className="w-16 h-16 rounded-full flex-shrink-0 shadow-md"
-                    />
-                    <h5 className="text-2xl font-bold text-slate-900 dark:text-white">John Doe</h5>
+                  <div className="mb-8">
+                    <h5 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">John Doe</h5>
                   </div>
 
                   {/* Two Column Layout */}
@@ -179,18 +178,102 @@ export const ExecutiveSummary = () => {
                     </div>
                   </div>
 
-                  {/* Social icons */}
-                  <div className="flex justify-center gap-4 pt-6 border-t border-slate-200 dark:border-slate-700">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234285F4'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E" alt="Google" className="w-8 h-8" />
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230084F3'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E" alt="Meta" className="w-8 h-8" />
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E" alt="TikTok" className="w-8 h-8" />
+                </div>
+              </div>
+
+              {/* Card 2: Unorganized Content */}
+              <div className="w-full">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 h-full">
+                  {/* Centered Heading */}
+                  <div className="text-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
+                    <svg viewBox="0 0 100 100" className="w-16 h-16 mx-auto mb-3">
+                      {/* Red folder icon */}
+                      <defs>
+                        <linearGradient id="folderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style={{stopColor: "#ef4444", stopOpacity: 1}} />
+                          <stop offset="100%" style={{stopColor: "#991b1b", stopOpacity: 1}} />
+                        </linearGradient>
+                      </defs>
+                      {/* Folder tab */}
+                      <rect x="10" y="15" width="30" height="15" fill="url(#folderGrad)" rx="2" />
+                      {/* Folder body */}
+                      <rect x="10" y="30" width="80" height="55" fill="url(#folderGrad)" rx="4" />
+                    </svg>
+                    <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Unorganized Content</h4>
+                  </div>
+
+                  {/* Content locations list */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📧</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Email Templates</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">🌐</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Web Content</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">�</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Videos</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">�🖨️</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Print Assets</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📱</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Social Media</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">🎨</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Design Assets</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📊</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Reports & Docs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Distributed Data */}
+              <div className="w-full">
+                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 h-full">
+                  {/* Centered Heading */}
+                  <div className="text-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
+                    <span className="text-4xl mb-3 block">🗄️</span>
+                    <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Distributed Data</h4>
+                  </div>
+
+                  {/* Data system locations list */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">🏢</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Legacy Database</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📊</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Data Warehouse</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">👥</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">CRM System</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📧</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Marketing Cloud</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📱</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Analytics Tools</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <p className="text-center text-slate-600 dark:text-slate-400 text-sm mt-8">
-              Multiple data sources unified into a single customer profile for personalization
+              These challenges require an integrated solution to unlock customer intelligence
             </p>
           </div>
         </div>
