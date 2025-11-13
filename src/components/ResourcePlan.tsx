@@ -3,53 +3,88 @@ import { Card } from "@/components/ui/card";
 export const ResourcePlan = () => {
   const resources = [
     {
+      role: "Program Manager",
+      count: 1,
+      responsibilities: "Project oversight, timeline management, executive reporting, risk management",
+      reportingTo: "Client Executive Sponsor",
+      commitment: "Full-time (All phases)",
+    },
+    {
       role: "Solution Architect",
       count: 1,
-      responsibilities: "Overall architecture design, integration strategy, technical leadership",
+      responsibilities: "Overall architecture design, integration strategy, technical leadership, platform configuration",
       reportingTo: "Program Manager",
       commitment: "Full-time (All Phases)",
     },
     {
-      role: "Technical Consultants",
-      count: 3,
-      responsibilities: "CDP/AJO/AEM implementation, SDK deployment, platform configuration",
+      role: "Change Management Lead",
+      count: 1,
+      responsibilities: "Governance setup, training programs, stakeholder communication, organizational alignment",
+      reportingTo: "Program Manager",
+      commitment: "Full-time (All Phases)",
+    },
+    {
+      role: "Data Architects",
+      count: 1,
+      responsibilities: "Data modeling, schema design, data governance policies, merge rules, compliance framework",
       reportingTo: "Solution Architect",
-      commitment: "Full-time (Phases 2-4)",
+      commitment: "Full-time (Phases 1-3)",
     },
     {
       role: "Data Engineers",
       count: 2,
-      responsibilities: "Data ingestion, profile unification, API integrations, data governance",
+      responsibilities: "Configure data sources, create datasets, API configuration, data ingestion pipelines, Monitoring Services",
+      reportingTo: "Solution Architect",
+      commitment: "Full-time (Phases 2-4)",
+    },
+    {
+      role: "Data Pipeline Engineer",
+      count: 1,
+      responsibilities: "Real-time data orchestration, streaming configuration, event streaming setup, data flow automation",
+      reportingTo: "Solution Architect",
+      commitment: "Full-time (Phases 2-3)",
+    },
+    {
+      role: "AEM Developers",
+      count: 2,
+      responsibilities: "AEM website development, personalization rules, template creation, content delivery optimization",
+      reportingTo: "Solution Architect",
+      commitment: "Full-time (Phases 3-4)",
+    },
+    {
+      role: "Journey Optimizer & Target Engineer",
+      count: 1,
+      responsibilities: "AJO campaign orchestration, email/SMS/push/in-app setup, journey builder configuration, Target A/B testing, personalization rules, analytics integration",
       reportingTo: "Solution Architect",
       commitment: "Full-time (Phases 2-4)",
     },
     {
       role: "Frontend Developers",
       count: 2,
-      responsibilities: "AEM template development, Target personalization, SDK integration",
+      responsibilities: "Web application development, SDK integration, performance optimization, responsive design",
       reportingTo: "Solution Architect",
       commitment: "Full-time (Phases 3-4)",
     },
     {
-      role: "Change Management Lead",
-      count: 1,
-      responsibilities: "Governance setup, training programs, stakeholder communication",
+      role: "Data Analysts & Marketers",
+      count: 2,
+      responsibilities: "Manage customer profiles, create audiences, campaign management, develop use cases, analytics",
       reportingTo: "Program Manager",
+      commitment: "Full-time (Phases 2-4)",
+    },
+    {
+      role: "Data Stewards",
+      count: 1,
+      responsibilities: "Data quality management, policy validation, governance compliance, data lifecycle management",
+      reportingTo: "Solution Architect",
       commitment: "Part-time (All Phases)",
     },
     {
       role: "QA/Testing Engineer",
       count: 1,
-      responsibilities: "End-to-end testing, user acceptance testing, quality assurance",
+      responsibilities: "End-to-end testing, user acceptance testing, quality assurance, performance validation",
       reportingTo: "Solution Architect",
       commitment: "Full-time (Phases 3-4)",
-    },
-    {
-      role: "Program Manager",
-      count: 1,
-      responsibilities: "Project oversight, timeline management, executive reporting, risk management",
-      reportingTo: "Client Executive Sponsor",
-      commitment: "Full-time (All phases)",
     },
   ];
 
@@ -62,12 +97,12 @@ export const ResourcePlan = () => {
     {
       role: "Program Manager",
       level: 1,
-      children: ["Solution Architect", "Change Management Lead"]
+      children: ["Solution Architect", "Change Management Lead", "Data Analysts & Marketers (2)"]
     },
     {
       role: "Solution Architect",
       level: 2,
-      children: ["Technical Consultants (3)", "Data Engineers (2)", "Frontend Developers (2)", "QA/Testing Engineer"]
+      children: ["Data Architects (1)", "Data Engineers (2)", "Data Pipeline Engineer", "AEM Developers (2)", "Journey Optimizer & Target Engineer", "Frontend Developers (2)", "Data Stewards", "QA/Testing Engineer"]
     },
     {
       role: "Change Management Lead",
@@ -75,7 +110,12 @@ export const ResourcePlan = () => {
       children: []
     },
     {
-      role: "Technical Consultants (3)",
+      role: "Data Analysts & Marketers (2)",
+      level: 2,
+      children: []
+    },
+    {
+      role: "Data Architects (1)",
       level: 3,
       children: []
     },
@@ -85,7 +125,27 @@ export const ResourcePlan = () => {
       children: []
     },
     {
+      role: "Data Pipeline Engineer",
+      level: 3,
+      children: []
+    },
+    {
+      role: "AEM Developers (2)",
+      level: 3,
+      children: []
+    },
+    {
+      role: "Journey Optimizer & Target Engineer",
+      level: 3,
+      children: []
+    },
+    {
       role: "Frontend Developers (2)",
+      level: 3,
+      children: []
+    },
+    {
+      role: "Data Stewards",
       level: 3,
       children: []
     },
@@ -130,60 +190,162 @@ export const ResourcePlan = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-6">Reporting Structure</h3>
-              <Card className="p-8 shadow-lg">
-                <div className="flex flex-col items-center gap-8">
-                  {/* Level 1: Executive Sponsor */}
-                  <div className="border-2 border-red-500 rounded-lg px-8 py-4 bg-red-50 text-center w-72">
-                    <p className="font-bold text-base">Client Executive Sponsor</p>
-                    <p className="text-xs text-muted-foreground">(CMO/CIO)</p>
-                  </div>
-                  
-                  {/* Connector */}
-                  <div className="w-1 h-8 bg-red-500" />
+              <Card className="p-8 bg-gradient-to-br from-red-50 via-white to-red-50 border-2 border-red-200 shadow-lg mt-12">
+                <h4 className="font-bold text-xl mb-2 text-red-800">Resources by Phase</h4>
+                <p className="text-sm text-red-600 mb-6">Resource allocation across 4-phase implementation timeline. Note: With parallel execution of tasks, Phases 1-3 total 6 months (Jan 13 - Jul 14, 2026)</p>
 
-                  {/* Level 2: Program Manager */}
-                  <div className="border-2 border-red-400 rounded-lg px-8 py-4 bg-red-50/80 text-center w-72">
-                    <p className="font-bold text-base">Program Manager</p>
-                  </div>
-
-                  {/* Connector */}
-                  <div className="w-1 h-8 bg-red-400" />
-
-                  {/* Level 3: Solution Architect & Change Mgmt - with horizontal connector */}
-                  <div className="relative w-full flex justify-center items-start gap-24">
-                    {/* Horizontal line and vertical drops */}
-                    <div className="absolute top-0 left-1/4 right-1/4 h-1 bg-red-300" />
-                    <div className="absolute top-0 left-1/4 w-1 h-8 bg-red-300" />
-                    <div className="absolute top-0 right-1/4 w-1 h-8 bg-red-300" />
-
-                    <div className="border-2 border-red-300 rounded-lg px-6 py-3 bg-red-50/60 text-center w-56">
-                      <p className="font-semibold text-sm">Solution Architect</p>
+                <div className="space-y-4">
+                  {/* Legend */}
+                  <div className="flex gap-6 mb-8 text-sm bg-white rounded-lg p-4 border border-red-150">
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 bg-red-400 rounded"></div>
+                      <span className="font-semibold text-red-800">Full-time</span>
                     </div>
-                    <div className="border-2 border-red-300 rounded-lg px-6 py-3 bg-red-50/60 text-center w-56">
-                      <p className="font-semibold text-sm">Change Mgmt Lead</p>
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 bg-red-200 rounded"></div>
+                      <span className="font-semibold text-red-800">Part-time</span>
                     </div>
                   </div>
 
-                  {/* Connector from Solution Architect */}
-                  <div className="ml-0 w-1 h-8 bg-red-300" />
-
-                  {/* Level 4: Implementation Team */}
-                  <div className="space-y-2 border-l-2 border-red-300 pl-6">
-                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Technical Consultants (3)</div>
-                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Data Engineers (2)</div>
-                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">Frontend Developers (2)</div>
-                    <div className="border border-gray-300 rounded px-4 py-2 bg-gray-50 text-sm">QA/Testing Engineer</div>
+                  {/* Phase labels */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-48"></div>
+                    <div className="flex-1 flex justify-between text-xs font-bold text-red-800 bg-white rounded-lg p-3 border border-red-150">
+                      <span>Phase 1</span>
+                      <span>Phase 2</span>
+                      <span>Phase 3</span>
+                      <span>Phase 4</span>
+                    </div>
                   </div>
-                </div>
-              </Card>
 
-              <Card className="mt-6 p-6 bg-primary/10 border-2 border-primary">
-                <h4 className="font-bold text-xl mb-4 text-primary">Total Team Size</h4>
-                <div className="grid grid-cols-1 gap-6 text-center">
-                  <div>
-                    <div className="text-4xl font-bold text-primary">13</div>
-                    <div className="text-sm text-foreground font-medium">Total Resources</div>
+                  {/* Gantt Chart */}
+                  <div className="space-y-3 bg-white rounded-lg p-6 border border-red-150">
+                    {/* Program Manager */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Program Manager (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">All Phases</div>
+                      </div>
+                    </div>
+
+                    {/* Solution Architect */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Solution Architect (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">All Phases</div>
+                      </div>
+                    </div>
+
+                    {/* Change Management Lead */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Change Mgmt Lead (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">All Phases</div>
+                      </div>
+                    </div>
+
+                    {/* Data Analysts */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Data Analysts (2)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[25%] h-full w-[75%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 2-4</div>
+                      </div>
+                    </div>
+
+                    {/* Data Architects */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Data Architects (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[25%] h-full w-[50%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 2-3</div>
+                      </div>
+                    </div>
+
+                    {/* Data Engineers */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Data Engineers (2)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[25%] h-full w-[75%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 2-4</div>
+                      </div>
+                    </div>
+
+                    {/* Data Pipeline Engineer */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Data Pipeline Eng (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[25%] h-full w-[50%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 2-3</div>
+                      </div>
+                    </div>
+
+                    {/* AEM Developers */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">AEM Developers (2)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[50%] h-full w-[50%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 3-4</div>
+                      </div>
+                    </div>
+
+                    {/* Journey Optimizer & Target */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">AJO & Target Eng (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[25%] h-full w-[75%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 2-4</div>
+                      </div>
+                    </div>
+
+                    {/* Frontend Developers */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Frontend Developers (2)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[50%] h-full w-[50%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 3-4</div>
+                      </div>
+                    </div>
+
+                    {/* Data Stewards */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">Data Stewards (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-red-200 to-red-100 rounded flex items-center justify-center text-xs font-bold text-red-800">All Phases (PT)</div>
+                      </div>
+                    </div>
+
+                    {/* QA/Testing */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-48 text-sm font-semibold text-slate-900">QA/Testing Eng (1)</div>
+                      <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                        <div className="absolute top-0 left-[50%] h-full w-[50%] bg-gradient-to-r from-red-400 to-red-300 rounded flex items-center justify-center text-xs font-bold text-white">Phases 3-4</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="grid grid-cols-4 gap-3 mt-6">
+                    <div className="text-center p-4 bg-white rounded border-2 border-red-200 shadow-md">
+                      <p className="text-sm font-semibold text-red-800 mb-1">Phase 1</p>
+                      <p className="text-3xl font-bold text-red-500">4</p>
+                      <p className="text-xs text-red-600 mt-2">19 days</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded border-2 border-red-200 shadow-md">
+                      <p className="text-sm font-semibold text-red-800 mb-1">Phase 2</p>
+                      <p className="text-3xl font-bold text-red-500">12</p>
+                      <p className="text-xs text-red-600 mt-2">18 days</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded border-2 border-red-200 shadow-md">
+                      <p className="text-sm font-semibold text-red-800 mb-1">Phase 3</p>
+                      <p className="text-3xl font-bold text-red-500">14</p>
+                      <p className="text-xs text-red-600 mt-2">170 days</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded border-2 border-red-200 shadow-md">
+                      <p className="text-sm font-semibold text-red-800 mb-1">Phase 4</p>
+                      <p className="text-3xl font-bold text-red-500">11</p>
+                      <p className="text-xs text-red-600 mt-2">60 days</p>
+                    </div>
+                  </div>
+
+                  {/* Clarification Note */}
+                  <div className="mt-6 p-4 bg-red-50 rounded border border-red-200">
+                    <p className="text-sm text-red-700">
+                      <span className="font-semibold">Timeline Note:</span> With parallel task execution across multiple workstreams, Phases 1-3 span approximately 6 months (Jan 13 - Jul 14, 2026), while Phase 4 is 3 months (Jul 27 - Sep 24, 2026).
+                    </p>
                   </div>
                 </div>
               </Card>
