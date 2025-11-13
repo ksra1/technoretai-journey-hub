@@ -111,7 +111,7 @@ export const ExecutiveSummary = () => {
 
           <div className="text-center py-8">
             <p className="text-2xl font-bold text-foreground">
-              These challenges unlock a $100M+ revenue opportunity.
+              These challenges unlock a $45-60M+ revenue opportunity.
             </p>
           </div>
 
@@ -185,19 +185,35 @@ export const ExecutiveSummary = () => {
               <div className="w-full">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 h-full">
                   {/* Centered Heading */}
-                  <div className="text-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
-                    <svg viewBox="0 0 100 100" className="w-16 h-16 mx-auto mb-3">
-                      {/* Red folder icon */}
+                  <div className="text-center mb-8 pb-2 border-b border-slate-200 dark:border-slate-700">
+                    <svg viewBox="0 0 100 100" className="w-24 h-24 mx-auto mb-1">
+                      {/* Red scattered media/images/videos icon */}
                       <defs>
-                        <linearGradient id="folderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="mediaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                           <stop offset="0%" style={{stopColor: "#ef4444", stopOpacity: 1}} />
                           <stop offset="100%" style={{stopColor: "#991b1b", stopOpacity: 1}} />
                         </linearGradient>
                       </defs>
-                      {/* Folder tab */}
-                      <rect x="10" y="15" width="30" height="15" fill="url(#folderGrad)" rx="2" />
-                      {/* Folder body */}
-                      <rect x="10" y="30" width="80" height="55" fill="url(#folderGrad)" rx="4" />
+                      {/* Back image frame - tilted left */}
+                      <g transform="translate(8, 18) rotate(-20)">
+                        <rect x="0" y="0" width="48" height="42" fill="url(#mediaGrad)" rx="4" opacity="0.7" />
+                        <rect x="3" y="3" width="42" height="36" fill="white" opacity="0.3" rx="2" />
+                        <circle cx="24" cy="21" r="6" fill="white" opacity="0.5" />
+                      </g>
+                      {/* Middle video frame with play button - tilted right */}
+                      <g transform="translate(36, 8) rotate(18)">
+                        <rect x="0" y="0" width="48" height="42" fill="url(#mediaGrad)" rx="4" opacity="0.85" />
+                        <rect x="3" y="3" width="42" height="36" fill="white" opacity="0.3" rx="2" />
+                        {/* Play button */}
+                        <polygon points="20,14 20,30 36,22" fill="white" opacity="0.6" />
+                      </g>
+                      {/* Front image frame - slight tilt */}
+                      <g transform="translate(20, 38) rotate(-12)">
+                        <rect x="0" y="0" width="48" height="42" fill="url(#mediaGrad)" rx="4" opacity="0.95" />
+                        <rect x="3" y="3" width="42" height="36" fill="white" opacity="0.4" rx="2" />
+                        {/* Mountain/landscape scene indicator */}
+                        <polygon points="6,32 16,16 25,24 38,12 42,40 6,40" fill="white" opacity="0.5" />
+                      </g>
                     </svg>
                     <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Unorganized Content</h4>
                   </div>
@@ -213,11 +229,11 @@ export const ExecutiveSummary = () => {
                       <span className="text-sm text-slate-600 dark:text-slate-400">Web Content</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">�</span>
+                      <span className="text-lg">🎥</span>
                       <span className="text-sm text-slate-600 dark:text-slate-400">Videos</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">�🖨️</span>
+                      <span className="text-lg">🖨️</span>
                       <span className="text-sm text-slate-600 dark:text-slate-400">Print Assets</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -229,8 +245,12 @@ export const ExecutiveSummary = () => {
                       <span className="text-sm text-slate-600 dark:text-slate-400">Design Assets</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">📊</span>
-                      <span className="text-sm text-slate-600 dark:text-slate-400">Reports & Docs</span>
+                      <span className="text-lg">🖼️</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Images</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">✍️</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Fonts</span>
                     </div>
                   </div>
                 </div>
@@ -240,8 +260,40 @@ export const ExecutiveSummary = () => {
               <div className="w-full">
                 <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 h-full">
                   {/* Centered Heading */}
-                  <div className="text-center mb-8 pb-6 border-b border-slate-200 dark:border-slate-700">
-                    <span className="text-4xl mb-3 block">🗄️</span>
+                  <div className="text-center mb-8 pb-2 border-b border-slate-200 dark:border-slate-700">
+                    <svg viewBox="0 0 100 100" className="w-24 h-24 mx-auto mb-1">
+                      {/* Red distributed databases icon - stacked cylinders */}
+                      <defs>
+                        <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style={{stopColor: "#ef4444", stopOpacity: 1}} />
+                          <stop offset="100%" style={{stopColor: "#991b1b", stopOpacity: 1}} />
+                        </linearGradient>
+                      </defs>
+                      {/* Top database cylinder */}
+                      <g transform="translate(20, 15)">
+                        <ellipse cx="15" cy="0" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.9" />
+                        <rect x="0" y="0" width="30" height="12" fill="url(#dataGrad)" />
+                        <ellipse cx="15" cy="12" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.7" />
+                      </g>
+                      
+                      {/* Middle database cylinder - offset right */}
+                      <g transform="translate(45, 40)">
+                        <ellipse cx="15" cy="0" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.85" />
+                        <rect x="0" y="0" width="30" height="12" fill="url(#dataGrad)" />
+                        <ellipse cx="15" cy="12" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.65" />
+                      </g>
+                      
+                      {/* Bottom database cylinder - offset left */}
+                      <g transform="translate(15, 65)">
+                        <ellipse cx="15" cy="0" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.8" />
+                        <rect x="0" y="0" width="30" height="12" fill="url(#dataGrad)" />
+                        <ellipse cx="15" cy="12" rx="15" ry="5" fill="url(#dataGrad)" opacity="0.6" />
+                      </g>
+                      
+                      {/* Connection arrows showing data flow */}
+                      <path d="M 38 28 L 48 35" stroke="url(#dataGrad)" strokeWidth="1.5" fill="none" opacity="0.7" markerEnd="url(#arrowhead)" />
+                      <path d="M 62 52 L 42 60" stroke="url(#dataGrad)" strokeWidth="1.5" fill="none" opacity="0.7" markerEnd="url(#arrowhead)" />
+                    </svg>
                     <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Distributed Data</h4>
                   </div>
 
@@ -265,7 +317,19 @@ export const ExecutiveSummary = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-lg">📱</span>
-                      <span className="text-sm text-slate-600 dark:text-slate-400">Analytics Tools</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Analytics Data</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">💳</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Transaction Data</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">📁</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">SharePoint</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">🔗</span>
+                      <span className="text-sm text-slate-600 dark:text-slate-400">FTP Server</span>
                     </div>
                   </div>
                 </div>

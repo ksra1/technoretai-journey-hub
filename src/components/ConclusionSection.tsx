@@ -7,6 +7,7 @@ export const ConclusionSection = () => {
       title: "Redesign and Relaunch Website",
       description: "Create modern, personalized digital experiences that recognize individual customers and adapt to their preferences",
       icon: "🌐",
+      iconSvg: 0,
       color: "from-red-400 to-red-300",
       addressed: "Fragmented Customer Experience & Speed-to-Market"
     },
@@ -15,6 +16,7 @@ export const ConclusionSection = () => {
       title: "Integrate CRM & Marketing Automation",
       description: "Connect CRM with marketing automation and ecommerce systems to enable seamless customer journey orchestration",
       icon: "🔗",
+      iconSvg: 1,
       color: "from-red-400 to-red-300",
       addressed: "Organizational Silos & Lack of Customer Intelligence"
     },
@@ -23,6 +25,7 @@ export const ConclusionSection = () => {
       title: "Centralized Content Hub",
       description: "Build a unified asset repository to enable content reuse across all channels and reduce time-to-market",
       icon: "📁",
+      iconSvg: 2,
       color: "from-red-400 to-red-300",
       addressed: "Slow Marketing & Speed-to-Market"
     },
@@ -30,7 +33,8 @@ export const ConclusionSection = () => {
       number: "4",
       title: "Analytics & Dashboards",
       description: "Establish real-time dashboards to understand customer journeys, measure campaign ROI, and accelerate decision-making",
-      icon: "📊",
+      icon: "📈",
+      iconSvg: 3,
       color: "from-red-400 to-red-300",
       addressed: "Lack of Customer Intelligence"
     },
@@ -39,13 +43,14 @@ export const ConclusionSection = () => {
       title: "Reduce Costs & Accelerate Speed",
       description: "Implement automation and streamlined processes to lower campaign operational costs while improving speed-to-market",
       icon: "⚡",
+      iconSvg: 4,
       color: "from-red-400 to-red-300",
       addressed: "Slow Marketing & Cost Efficiency"
     },
   ];
 
   const outcomes = [
-    { metric: "$35-45M", label: "Revenue Uplift Opportunity", sublabel: "Through personalization and conversion improvements" },
+    { metric: "$45-60M", label: "Revenue Uplift Opportunity", sublabel: "Through unified platform and operational efficiency" },
     { metric: "4 weeks", label: "Campaign Cycle Reduction", sublabel: "From 3-5 months to weeks" },
     { metric: "25-30%", label: "Marketing Cost Reduction", sublabel: "Through automation and optimization" },
     { metric: "5x ROI", label: "Expected Return on Investment", sublabel: "Within 18-24 months" },
@@ -90,8 +95,10 @@ export const ConclusionSection = () => {
                   </div>
 
                   {/* Icon and Title */}
-                  <div className="flex items-start gap-4 mb-4 pt-4">
-                    <div className="text-4xl flex-shrink-0">{initiative.icon}</div>
+                  <div className="flex items-start gap-4 mb-6 pt-4 pr-8">
+                    <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-red-50">
+                      <span className="text-3xl">{initiative.icon}</span>
+                    </div>
                     <div>
                       <h4 className="text-lg font-bold text-gray-900 mb-1">{initiative.title}</h4>
                     </div>
