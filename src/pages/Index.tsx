@@ -5,6 +5,7 @@ import { ProductsOverview } from "@/components/ProductsOverview";
 import { TimelineSection } from "@/components/TimelineSection";
 import { ArchitectureSection } from "@/components/ArchitectureSection";
 import { ResourcePlan } from "@/components/ResourcePlan";
+import { ConclusionSection } from "@/components/ConclusionSection";
 
 const Index = () => {
   return (
@@ -17,13 +18,14 @@ const Index = () => {
         <ArchitectureSection />
         <TimelineSection />
         <ResourcePlan />
+        <ConclusionSection />
       </main>
       <footer className="bg-card border-t border-border py-8 text-center">
         <p className="text-sm text-muted-foreground mb-2">
           TechnoRetail Digital Transformation Proposal • Adobe Experience Cloud Solution Architecture
         </p>
         <p className="text-sm text-muted-foreground">
-          Prepared by Sravan Kollapudi
+          {/* Prepared by Sravan Kollapudi */}
         </p>
       </footer>
     </div>
