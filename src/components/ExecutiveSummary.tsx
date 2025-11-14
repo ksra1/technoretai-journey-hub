@@ -71,7 +71,7 @@ export const ExecutiveSummary = () => {
     <section id="summary" className="min-h-screen py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Executive Summary</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">Current State</h2>
           
           <div className="bg-card border-2 border-primary/20 rounded-lg p-8 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { id: "intro", label: "Introduction" },
-  { id: "summary", label: "Executive Summary" },
+  { id: "summary", label: "Current State" },
   { id: "products", label: "Products" },
   { id: "architecture", label: "Architecture" },
   { id: "timeline", label: "Execution Plan" },
