@@ -275,6 +275,85 @@ export const TimelineSection = () => {
             </div>
           </div>
 
+          {/* Phase Details Cards */}
+          <div className="mb-16 space-y-8">
+            {phases.map((phase, phaseIndex) => (
+              <Card key={phaseIndex} className="p-6 shadow-lg">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`h-4 w-4 rounded-full ${phase.color}`} />
+                  <h3 className="text-2xl font-bold">{phase.name}</h3>
+                  <span className={`ml-auto px-3 py-1 rounded-full text-xs font-semibold ${
+                    phaseIndex < 3 
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100' 
+                      : 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100'
+                  }`}>
+                    {phaseIndex < 3 ? 'Core Implementation' : 'Scale & Optimize'}
+                  </span>
+                </div>
+                
+                <div className="space-y-2">
+                  {phase.tasks.map((task, taskIndex) => {
+                    const itemId = `${phaseIndex}-${taskIndex}`;
+                    const isOpen = openItems.includes(itemId);
+                    
+                    return (
+                      <Collapsible key={taskIndex} open={isOpen} onOpenChange={() => toggleItem(itemId)}>
+                        <CollapsibleTrigger className="w-full">
+                          <div className="border-l-4 border-border hover:border-primary transition-colors pl-4 py-2 text-left">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                              <div className="flex-1 flex items-center gap-2">
+                                <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                                <h4 className="font-semibold text-foreground">{task.name}</h4>
+                              </div>
+                              <div className="flex gap-4 text-sm text-muted-foreground ml-6 md:ml-0">
+                                <span>{task.start}</span>
+                                <span>→</span>
+                                <span>{task.end}</span>
+                                <span className="font-medium text-primary">({task.days} days)</span>
+                              </div>
+                            </div>
+                          </div>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent>
+                          <div className="ml-10 mt-2 p-4 bg-muted/50 rounded-lg">
+                            <p className="text-sm text-muted-foreground mb-3">{task.description}</p>
+                            
+                            {task.details?.workshops && (
+                              <div className="space-y-4">
+                                {task.details.workshops.map((workshop, wIndex) => (
+                                  <Card key={wIndex} className="p-4 bg-background">
+                                    <h5 className="font-bold text-lg mb-2 text-primary">{workshop.name}</h5>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3 text-sm">
+                                      <p><span className="font-semibold">Duration:</span> {workshop.duration}</p>
+                                      <p><span className="font-semibold">Participants:</span> {workshop.participants}</p>
+                                    </div>
+                                    
+                                    <div className="mb-3">
+                                      <h6 className="font-semibold text-sm mb-2">Key Questions:</h6>
+                                      <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                                        {workshop.questions.map((q, qIndex) => (
+                                          <li key={qIndex}>{q}</li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                    
+                                    <div className="pt-2 border-t border-border">
+                                      <p className="text-sm"><span className="font-semibold">Deliverable:</span> {workshop.deliverable}</p>
+                                    </div>
+                                  </Card>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    );
+                  })}
+                </div>
+              </Card>
+            ))}
+          </div>
+
           {/* Gantt Chart Section */}
           <div className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-8">Project Gantt Chart</h3>
@@ -353,84 +432,6 @@ export const TimelineSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="space-y-8">
-            {phases.map((phase, phaseIndex) => (
-              <Card key={phaseIndex} className="p-6 shadow-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`h-4 w-4 rounded-full ${phase.color}`} />
-                  <h3 className="text-2xl font-bold">{phase.name}</h3>
-                  <span className={`ml-auto px-3 py-1 rounded-full text-xs font-semibold ${
-                    phaseIndex < 3 
-                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100' 
-                      : 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100'
-                  }`}>
-                    {phaseIndex < 3 ? 'Core Implementation' : 'Scale & Optimize'}
-                  </span>
-                </div>
-                
-                <div className="space-y-2">
-                  {phase.tasks.map((task, taskIndex) => {
-                    const itemId = `${phaseIndex}-${taskIndex}`;
-                    const isOpen = openItems.includes(itemId);
-                    
-                    return (
-                      <Collapsible key={taskIndex} open={isOpen} onOpenChange={() => toggleItem(itemId)}>
-                        <CollapsibleTrigger className="w-full">
-                          <div className="border-l-4 border-border hover:border-primary transition-colors pl-4 py-2 text-left">
-                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                              <div className="flex-1 flex items-center gap-2">
-                                <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                                <h4 className="font-semibold text-foreground">{task.name}</h4>
-                              </div>
-                              <div className="flex gap-4 text-sm text-muted-foreground ml-6 md:ml-0">
-                                <span>{task.start}</span>
-                                <span>→</span>
-                                <span>{task.end}</span>
-                                <span className="font-medium text-primary">({task.days} days)</span>
-                              </div>
-                            </div>
-                          </div>
-                        </CollapsibleTrigger>
-                        <CollapsibleContent>
-                          <div className="ml-10 mt-2 p-4 bg-muted/50 rounded-lg">
-                            <p className="text-sm text-muted-foreground mb-3">{task.description}</p>
-                            
-                            {task.details?.workshops && (
-                              <div className="space-y-4">
-                                {task.details.workshops.map((workshop, wIndex) => (
-                                  <Card key={wIndex} className="p-4 bg-background">
-                                    <h5 className="font-bold text-lg mb-2 text-primary">{workshop.name}</h5>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3 text-sm">
-                                      <p><span className="font-semibold">Duration:</span> {workshop.duration}</p>
-                                      <p><span className="font-semibold">Participants:</span> {workshop.participants}</p>
-                                    </div>
-                                    
-                                    <div className="mb-3">
-                                      <h6 className="font-semibold text-sm mb-2">Key Questions:</h6>
-                                      <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                                        {workshop.questions.map((q, qIndex) => (
-                                          <li key={qIndex}>{q}</li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                    
-                                    <div className="pt-2 border-t border-border">
-                                      <p className="text-sm"><span className="font-semibold">Deliverable:</span> {workshop.deliverable}</p>
-                                    </div>
-                                  </Card>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </CollapsibleContent>
-                      </Collapsible>
-                    );
-                  })}
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </div>
