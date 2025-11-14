@@ -22,15 +22,15 @@ export const IntroSection = () => {
           </div>
           
           <div className="bg-card border border-border rounded-lg p-6 shadow-lg">
-            <p className="text-lg text-muted-foreground mb-3">Presenting To</p>
-            <div className="flex flex-wrap justify-center gap-4 text-lg">
-              <span className="font-medium">Eric Wood</span>
+            <p className="text-sm text-muted-foreground mb-3">Presenting To</p>
+            <div className="flex flex-wrap justify-center gap-4 text-xl font-medium">
+              <span>Eric Wood</span>
               <span className="text-muted-foreground">•</span>
-              <span className="font-medium">Deepak Narisety</span>
+              <span>Deepak Narisety</span>
               <span className="text-muted-foreground">•</span>
-              <span className="font-medium">Jessica Narisety</span>
+              <span>Jessica Narisety</span>
               <span className="text-muted-foreground">•</span>
-              <span className="font-medium">Alex Glaser</span>
+              <span>Alex Glaser</span>
             </div>
           </div>
 
