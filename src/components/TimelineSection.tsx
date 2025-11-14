@@ -254,11 +254,26 @@ export const TimelineSection = () => {
     <section id="timeline" className="min-h-screen py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4">Implementation Timeline</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">Plan & Timeline</h2>
           <p className="text-center text-slate-600 dark:text-slate-400 mb-12 text-lg">
             <span className="font-semibold">Core Implementation:</span> 6 months (Jan 13 - Jul 14, 2026) | 
             <span className="font-semibold ml-2">Scale & Optimize:</span> 3 months (Jul 27 - Sep 24, 2026)
           </p>
+
+          {/* Visual Timeline */}
+          <div className="mb-16 relative">
+            <div className="flex justify-between items-center relative">
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-700 via-orange-600 via-emerald-600 to-slate-600 -translate-y-1/2 z-0" />
+              {phases.map((phase, index) => (
+                <div key={index} className="relative z-10 flex flex-col items-center flex-1">
+                  <div className={`${phase.color} w-4 h-4 rounded-full mb-2 border-4 border-background`} />
+                  <div className="text-center px-2">
+                    <div className="font-semibold text-sm">{phase.name}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Gantt Chart Section */}
           <div className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
@@ -337,21 +352,6 @@ export const TimelineSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Visual Timeline */}
-          <div className="mb-12 relative">
-            <div className="flex justify-between items-center relative">
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-700 via-orange-600 via-emerald-600 to-slate-600 -translate-y-1/2 z-0" />
-              {phases.map((phase, index) => (
-                <div key={index} className="relative z-10 flex flex-col items-center flex-1">
-                  <div className={`${phase.color} w-4 h-4 rounded-full mb-2 border-4 border-background`} />
-                  <div className="text-center px-2">
-                    <div className="font-semibold text-sm">{phase.name}</div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
