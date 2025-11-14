@@ -254,7 +254,7 @@ export const TimelineSection = () => {
     <section id="timeline" className="min-h-screen py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4">Plan & Timeline</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">Execution Plan</h2>
           <p className="text-center text-slate-600 dark:text-slate-400 mb-12 text-lg">
             <span className="font-semibold">Core Implementation:</span> 6 months (Jan 13 - Jul 14, 2026) | 
             <span className="font-semibold ml-2">Scale & Optimize:</span> 3 months (Jul 27 - Sep 24, 2026)
@@ -355,8 +355,8 @@ export const TimelineSection = () => {
           </div>
 
           {/* Gantt Chart Section */}
-          <div className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold mb-8">Project Gantt Chart</h3>
+          <div id="gantt-timeline" className="mb-16 bg-white dark:bg-slate-900 rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-bold mb-8">Timeline</h3>
             
             <div className="overflow-x-auto">
               <div className="min-w-max">

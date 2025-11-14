@@ -7,7 +7,8 @@ const navItems = [
   { id: "summary", label: "Executive Summary" },
   { id: "products", label: "Products" },
   { id: "architecture", label: "Architecture" },
-  { id: "timeline", label: "Plan" },
+  { id: "timeline", label: "Execution Plan" },
+  { id: "gantt-timeline", label: "Timeline" },
   { id: "resources", label: "Resources" },
   { id: "conclusion", label: "Conclusion" },
 ];
